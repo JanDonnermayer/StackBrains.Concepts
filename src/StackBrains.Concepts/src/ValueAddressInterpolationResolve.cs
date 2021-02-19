@@ -35,7 +35,7 @@ namespace FrogStack.Brightpearl
                 string GetEntityPropertyValue(IEnumerable<string> path)
                 {
                     var _path = string.Join(".", path);
-                    var value = entity.GetValue().SelectToken(_path);
+                    var value = entity.SelectToken(_path);
                     if (value == null) throw new Exception($"No value at path: {_path}");
                     return value.ToString();
                 }
