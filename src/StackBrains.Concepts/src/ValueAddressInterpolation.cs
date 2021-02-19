@@ -23,13 +23,13 @@ namespace FrogStack.Brightpearl
                 if (!success) return null;
 
                 var entityAddress = new EntityAddress(
-                    entityType: entityType.Value,
-                    entityId: entityId.Value
+                    entityType: entityType!.Value,
+                    entityId: entityId!.Value
                 );
 
                 return new ValueAddress(
                     entityAddress: entityAddress,
-                    propertyPath: propertyPath.Value.Split(".")
+                    propertyPath: propertyPath!.Value.Split(".")
                         .Where(s => !string.IsNullOrEmpty(s)).ToArray()
                 );
             }
